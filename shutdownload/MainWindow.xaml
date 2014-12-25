@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" mc:Ignorable="d" x:Class="shutdownload.MainWindow"
+        Title="Shutdownload" Height="228" Width="501" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox Header="Parametros" Margin="8,8,0,0" HorizontalAlignment="Left" Width="265" Height="182.333" VerticalAlignment="Top" Name="gbParametros">
+        	<Grid>
+        		<ComboBox Height="23" Margin="68.513,8,8,0" x:Name="cbInterfaz" VerticalAlignment="Top" />
+        		<TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" FontSize="16"><Run Language="es-es" Text="Interfaz:"/></TextBlock>
+        		<ComboBox Margin="98.893,38,8,0" VerticalAlignment="Top" SelectedIndex="0" Name="cbApagar">
+                    <ComboBoxItem Content="Recepción" />
+                    <ComboBoxItem Content="Envío" />
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Margin="8,38,0,0" TextWrapping="Wrap" Text="Apagar por?" FontSize="16" Height="22.96" VerticalAlignment="Top"/>
+        		<TextBlock HorizontalAlignment="Left" Margin="8,66.295,0,0" TextWrapping="Wrap" Text="Velocidad minima:" VerticalAlignment="Top" Height="21.293" FontSize="16"/>
+        		<xctk:DecimalUpDown HorizontalAlignment="Right" Margin="0,66.295,52.513,0" VerticalAlignment="Top" Value="16" Width="58.333" Name="udVelocidad" Minimum="1" />
+        		<TextBlock HorizontalAlignment="Right" Margin="0,64.121,14,0" TextWrapping="Wrap" FontSize="16" Height="23.293" VerticalAlignment="Top"><Run Language="es-es" Text="KB/S"/></TextBlock>
+        		<TextBlock HorizontalAlignment="Left" Margin="7.86,96.294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Language="es-es" Text="Tiempo:"/></TextBlock>
+        		<xctk:DecimalUpDown Margin="68.513,97.614,0,0" Value="3" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48.333" Name="udTiempo" Minimum="1" />
+        		<TextBlock Margin="124.924,96.294,70.13,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" d:LayoutOverrides="Width"><Run Language="es-es" Text="Minutos"/></TextBlock>
+        		<TextBlock HorizontalAlignment="Left" Margin="8,128.413,0,0" TextWrapping="Wrap" Text="Acción:" VerticalAlignment="Top" FontSize="16"/>
+        		<ComboBox Margin="62.87,128.413,70.13,0" VerticalAlignment="Top" SelectedIndex="0" Name="cbAccion">
+                    <ComboBoxItem Content="Suspender" />
+                    <ComboBoxItem Content="Apagar" />
+                    <ComboBoxItem Content="Hibernar" />
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Info" HorizontalAlignment="Left" Margin="277,8,0,0" Width="209" Height="102.999" VerticalAlignment="Top">
+        	<Grid>
+                <TextBlock HorizontalAlignment="Left" Margin="8,33.28,0,0" TextWrapping="Wrap" Text="Envío:" VerticalAlignment="Top" FontSize="16"/>
+        		<TextBlock Text="Label" Height="21.28" Margin="120.31,8,0,0" x:Name="lbDownSpeed" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" FontSize="16" HorizontalAlignment="Left" Width="68.69" TextAlignment="Right" />
+                <TextBlock HorizontalAlignment="Left" Margin="8,8,0,0" TextWrapping="Wrap" Text="Recepción: " VerticalAlignment="Top" FontSize="16" d:LayoutOverrides="HorizontalAlignment"/>
+        		<TextBlock Text="Label" Height="21.28" Margin="120.31,33.28,0,0" x:Name="lbUpSpeed" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Left" Width="68.69" TextAlignment="Right" />
+        		<TextBlock HorizontalAlignment="Left" Margin="8,58.56,0,0" TextWrapping="Wrap" Text="Tiempo Restante:" VerticalAlignment="Top" FontSize="16"/>
+        		<TextBlock HorizontalAlignment="Right" Margin="0,58.56,8,0" TextWrapping="Wrap" Text="0s" VerticalAlignment="Top" FontSize="16" Width="54.83" Name="lbTiempo" TextAlignment="Right" />
+        	</Grid>
+        </GroupBox>
+        <Button Content="Iniciar" HorizontalAlignment="Left" Margin="277,114.999,0,0" Width="209" Height="75.334" VerticalAlignment="Top" Background="White" Foreground="Black" FontSize="16" Click="Button_Click" Name="btnIniciar" />
+    </Grid>
+</Window>
